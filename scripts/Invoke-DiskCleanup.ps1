@@ -93,10 +93,11 @@ function Get-DefaultCleanupPath {
     [OutputType([string[]])]
     param([string]$SystemRoot = $env:SystemRoot, [string]$SystemDrive = $env:SystemDrive)
     @(
-        (Join-Path $SystemRoot 'Temp')
-        (Join-Path $SystemDrive 'Users\*\AppData\Local\Temp')
-        (Join-Path $SystemRoot 'SoftwareDistribution\Download')
-        (Join-Path $SystemRoot 'Logs\CBS\*.cab')
+        # String concatenation rather than Join-Path, so the paths can be built without the drive existing.
+        "$SystemRoot\Temp"
+        "$SystemDrive\Users\*\AppData\Local\Temp"
+        "$SystemRoot\SoftwareDistribution\Download"
+        "$SystemRoot\Logs\CBS\*.cab"
     )
 }
 

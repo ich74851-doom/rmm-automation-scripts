@@ -15,7 +15,7 @@ RMM on its own.
 
 These scripts reflect the kind of patching, monitoring and remediation work I do across client
 fleets with RMM tools. They are written from scratch for this repository and contain no client
-data.
+data. Example output and test data (host names, services, sizes) are fictional.
 
 ## Features
 
